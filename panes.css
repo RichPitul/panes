@@ -1,0 +1,59 @@
+.pane-holder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transition: all 0.5s; }
+  .pane-holder img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    transition: all 0.5s; }
+  .pane-holder .pane {
+    transition: all 0.5s;
+    flex-grow: 1;
+    position: relative;
+    width: 0;
+    overflow: hidden; }
+    .pane-holder .pane .selectable {
+      border: 2px solid rgba(0, 0, 0, 0.2);
+      z-index: 2;
+      width: 100%;
+      box-sizing: border-box;
+      transition: transform 0.5s; }
+    .pane-holder .pane .clear-mask {
+      width: 0;
+      overflow: hidden;
+      background: no-repeat center fixed;
+      background-size: cover;
+      z-index: 1;
+      transform-origin: center; }
+    .pane-holder .pane .selectable, .pane-holder .pane .clear-mask {
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0; }
+    .pane-holder .pane .blurred {
+      filter: blur(25px); }
+    .pane-holder .pane .blurred, .pane-holder .pane .clear-mask {
+      transition: all 0.5s;
+      opacity: 0; }
+    .pane-holder .pane.first .blurred {
+      opacity: 1; }
+    .pane-holder .pane:hover {
+      width: 20%; }
+      .pane-holder .pane:hover .clear-mask {
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+        transform: scale(1.05); }
+      .pane-holder .pane:hover .blurred {
+        opacity: 1;
+        transform: scale(1.05); }
+
+/*# sourceMappingURL=panes.css.map */
